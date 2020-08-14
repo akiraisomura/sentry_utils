@@ -7,7 +7,7 @@ require 'slack-notifier'
 
 def main
   error_count = fetch_latest_error_count
-  return if error_count / error_limit.to_f * 100 < 90
+  return if error_count / error_limit.to_f * 100 < config['alert_threshold']
 
   message = format(config['error_message'], actual: error_count, limit: error_limit)
   post_message(message)
