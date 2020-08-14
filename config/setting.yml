@@ -1,0 +1,12 @@
+plan:
+  developer:
+    max_error: 5000
+  team:
+    max_error: 50000
+  business:
+    max_error: 50000
+
+sentry_login_url: https://sentry.io/auth/login/
+sentry_usage_history_url: "https://sentry.io/settings/%{organization}/usage/history/"
+error_message: "You may exhaust your sentry monthly quota. Actual: %{actual}, Limit %{limit}"
+slack_alert_user_name: Sentry error limit alert
